@@ -1,0 +1,7 @@
+{
+  "name": "FoodTruck",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
