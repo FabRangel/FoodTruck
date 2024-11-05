@@ -1,13 +1,28 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>home</ion-title>
+    <ion-title>
+      Menú
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">home</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-content color="light">
+    <ion-list [inset]="true" lines="none" class="spaced-list">
+      @for (item of foods; track item.id) {
+        <ion-item class="ion-margin-top ion-margin-bottom ">
+          <ion-avatar slot="start" class="custom-avatar">
+            <img alt="Platillo" [src]="item.url_img" />
+          </ion-avatar>
+          <ion-label>
+            <div class="item-header">
+              <span class="item-name">{{ item.name }}</span>
+              <span class="item-price">{{ item.price | currency }}</span>
+            </div>
+            <p class="item-description">{{ item.description }}</p>
+          </ion-label>
+        </ion-item>
+    }
+    </ion-list>
+  </ion-content>
 </ion-content>
