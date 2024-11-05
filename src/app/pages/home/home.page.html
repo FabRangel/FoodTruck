@@ -7,10 +7,10 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-content color="light">
-    <ion-list [inset]="true" lines="none" class="spaced-list">
-      @for (item of foods; track item.id) {
-        <ion-item class="ion-margin-top ion-margin-bottom ">
+  <ion-list [inset]="true" lines="none" >
+    @for (item of foods; track item.id) {
+      <ion-item-sliding mode="ios" class="ion-margin-vertical ion-padding-vertical">
+        <ion-item>
           <ion-avatar slot="start" class="custom-avatar">
             <img alt="Platillo" [src]="item.url_img" />
           </ion-avatar>
@@ -22,7 +22,19 @@
             <p class="item-description">{{ item.description }}</p>
           </ion-label>
         </ion-item>
+
+        <ion-item-options side="end">
+          <ion-item-option class="no-bg" >
+            <ion-icon  slot="icon-only" name="create"  color="primary"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+
+        <ion-item-options side="start">
+          <ion-item-option class="no-bg" >
+            <ion-icon slot="icon-only" name="trash" color="danger"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
     }
-    </ion-list>
-  </ion-content>
+  </ion-list>
 </ion-content>

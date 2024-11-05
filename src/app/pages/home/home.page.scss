@@ -39,3 +39,11 @@
     height: 100%;
     object-fit: cover; 
   }
+
+  .no-bg {
+    --background: transparent; /* Quita el color de fondo del botón */
+  }
+  
+  .no-bg ion-icon {
+    font-size: 1.5em; /* Ajusta el tamaño si es necesario */
+  }
