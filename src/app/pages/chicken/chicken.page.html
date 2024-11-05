@@ -1,0 +1,15 @@
+<ion-header [translucent]="true">
+  <app-toolbar title="Pollito"></app-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      @for (item of foodList; track item.idMeal) {
+        <ion-col size="12">
+          <app-food-card tipo="Pollo" [food]="item"></app-food-card>
+        </ion-col>
+      }
+    </ion-row>
+  </ion-grid>
+</ion-content>

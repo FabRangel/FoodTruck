@@ -1,0 +1,68 @@
+<div class="card-container">
+  <div class="tab-folder">
+    <ion-label>{{tipo}}</ion-label>
+  </div>
+  <ion-card mode="ios">
+    <ion-card-header>
+      <ion-card-title>{{food.strMeal}}</ion-card-title>
+     <!--<ion-card-subtitle>Italian</ion-card-subtitle>--> 
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-segment value="recipe" (ionChange)="segmentChanged($event)">
+        <ion-segment-button value="recipe">
+          <ion-label>Receta</ion-label>
+        </ion-segment-button>
+        <ion-segment-button disabled="true" value="video">
+          <ion-label>Video</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+
+      <ion-grid fixed>
+        <ion-row *ngIf="selectedSegment === 'recipe'">
+          <ion-col size="6">
+            <ion-text>
+              <h2><b>Recipe</b></h2><br>
+              <p>
+                Heat the oil in a large pan. Add the duck legs and brown on all sides for about 10 mins. Remove to a
+                plate and set aside. Add the onions to the pan and cook for 5 mins until softened.
+                <span *ngIf="!showFullRecipe">... <a (click)="showFullRecipe = true">Ver más</a></span>
+                <span *ngIf="showFullRecipe">
+                  Add the garlic and cook for a further 1 min, then stir in the cinnamon and flour and cook for a
+                  further min. Return the duck to the pan, add the wine, tomatoes, stock, herbs, sugar and seasoning.
+                  Bring to a simmer, then lower the heat, cover with a lid and cook for 2 hrs, stirring every now and
+                  then.
+                  <br>Carefully lift the duck legs out of the sauce and place on a plate – they will be very tender so
+                  try not to lose any of the meat. Pull off and discard the fat, then shred the meat with 2 forks and
+                  discard the bones. Add the meat back to the sauce with the milk and simmer, uncovered, for a further
+                  10-15 mins while you cook the pasta.
+                </span>
+              </p>
+            </ion-text>
+          </ion-col>
+          <ion-col size="6">
+            <ion-img [src]="food.strMealThumb"
+              alt="Imagen de la comida"></ion-img>
+          </ion-col>
+        </ion-row>
+
+        <ion-row *ngIf="selectedSegment === 'video'">
+          <ion-col size="12">
+            <iframe *ngIf="safeUrl" [src]="safeUrl" width="100%" height="315" frameborder="0" allowfullscreen></iframe>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="12" class="ion-text-right">
+            <ion-button (click)="openToast()" mode="ios" color="secondary" shape="round" size="large" fill="clear">
+              <ion-icon slot="icon-only" size="large" name="cart"></ion-icon>
+            </ion-button>
+            <ion-button shape="round" color="secondary" size="large">
+              $$$$
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</div>

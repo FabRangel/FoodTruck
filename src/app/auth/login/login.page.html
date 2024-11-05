@@ -1,0 +1,24 @@
+<ion-content [fullscreen]="true">
+  <ion-grid fixed>
+    <ion-col size="10" offset="1">
+      <ion-card color="light" class="ion-padding">
+        <ion-card-header>
+          <ion-card-title> Login </ion-card-title>
+        </ion-card-header>
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+          <ion-item>
+            <ion-label position="floating">E-Mail <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input formControlName="email" class="ion-margin-top" fill="outline" type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Password <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input formControlName="password" class="ion-margin-top" fill="outline" type="text"></ion-input>
+          </ion-item>
+          <ion-button shape="round" class="ion-margin-top" expand="block" color="primary" type="submit" [disabled]="loginForm.invalid">
+            Login
+          </ion-button>
+        </form>
+      </ion-card>
+    </ion-col>
+  </ion-grid>
+</ion-content>

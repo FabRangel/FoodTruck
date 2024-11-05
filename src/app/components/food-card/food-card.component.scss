@@ -1,0 +1,19 @@
+.card-container {
+    position: relative;
+  }
+  
+  .tab-folder {
+    position: absolute;
+    top: -30px; 
+    right: 20px; 
+    background-color: #f8f8f8;
+    border-radius: 10px 10px 0 0;
+    padding: 5px 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+  }
+  
+  .tab-folder ion-label {
+    font-size: 14px;
+    color: #333;
+  }
