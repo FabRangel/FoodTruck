@@ -1,49 +1,43 @@
+/* Estilos de ítem */
 .item-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .item-name {
-    font-weight: bold;
-  }
-  
-  .item-price {
-    font-weight: bold;
-    color: #4caf50; /* Cambia el color según prefieras */
-  }
-  
-  .item-description {
-    margin-top: 4px;
-    color: #6b6b6b;
-    font-size: 0.9em;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  .spaced-list ion-item {
-    margin-top: 12px;
-    margin-bottom: 12px;
-    padding: 12px;
-    border-radius: 8px;
-    background: #ffffff;
-  }
+.item-name {
+  font-weight: bold;
+}
 
-  .custom-avatar {
-    width: 80px; 
-    height: 80px; 
-    border-radius: 8px; 
-    overflow: hidden; 
-  }
-  
-  .custom-avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-  }
+.item-price {
+  font-weight: bold;
+  color: #4caf50; /* Cambia el color según prefieras */
+}
 
-  .no-bg {
-    --background: transparent; /* Quita el color de fondo del botón */
-  }
-  
-  .no-bg ion-icon {
-    font-size: 1.5em; /* Ajusta el tamaño si es necesario */
-  }
+.item-description {
+  margin-top: 4px;
+  color: #6b6b6b;
+  font-size: 0.9em;
+}
+
+.spaced-list ion-item {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.custom-avatar {
+  width: 80px; 
+  height: 80px; 
+  border-radius: 8px; 
+  overflow: hidden; 
+}
+
+.custom-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+

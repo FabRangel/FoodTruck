@@ -7,6 +7,12 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <div class="ion-text-center">
+    <ion-button expand="block" color="success" (click)="newFood()" >
+      <ion-icon slot="start" name="add"></ion-icon>
+      Food
+    </ion-button>
+  </div>
   <ion-list [inset]="true" lines="none" >
     @for (item of foods; track item.id) {
       <ion-item-sliding mode="ios" class="ion-margin-vertical ion-padding-vertical">
@@ -24,14 +30,17 @@
         </ion-item>
 
         <ion-item-options side="end">
-          <ion-item-option class="no-bg" >
-            <ion-icon  slot="icon-only" name="create"  color="primary"></ion-icon>
+          <ion-item-option class="edit-option" color="secondary">
+            <ion-icon  slot="icon-only" name="create"  ></ion-icon>
+          </ion-item-option>
+          <ion-item-option (click)="compartir(item)" class="edit-option" color="tertiary">
+            <ion-icon  slot="icon-only" name="share-social"  ></ion-icon>
           </ion-item-option>
         </ion-item-options>
 
         <ion-item-options side="start">
-          <ion-item-option class="no-bg" >
-            <ion-icon slot="icon-only" name="trash" color="danger"></ion-icon>
+          <ion-item-option class="delete-option" color="danger" >
+            <ion-icon slot="icon-only" name="trash" ></ion-icon>
           </ion-item-option>
         </ion-item-options>
       </ion-item-sliding>
